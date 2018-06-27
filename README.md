@@ -1,2 +1,25 @@
 # LSTM_predictions_tf
 Use LSTM in tensorflow to predict outcomes from text data
+
+
+**The goal** of these models was to use an LSTM network (long short term memory network, an artificial netural network architecture) predict depression labels (based on the PHQ-8) from transcribed verbal data from an interivews with around 700 participants (including DCAPS data). Interviews were intended to simulate a structured psychiatric interview. 
+
+Prediction options include: depression level (continuous, low/med/high, or binary), level for each depression symptom based on PHQ-8 (low/med/high, or binary). You may need to change the cost function in the code depending on the outcome chosen. Depression data is often unbalanced (more lower levels of depression), so options in code for 1) undersampling the majority class (lower levels of depression) and 2) cost-senstive learning. For regularization, there are various options for drop out and L1/L2 regaularization. 
+
+**Three variants of the model include in this repo:**
+
+*1. RNN_PredictingPHQsymptoms_7.25_not_dynamic-multi_task-cleaned.8.22.ipynb*
+* Embeddings learned along the way to replaced uttered words with embeddings and then feed these into LSTM layer
+* Options to predict mutliple outcomes (e.g., jointly predict two specific depression symptoms) which could improve generalizability of the model
+
+*2. RNN_PredictingPHQsymptoms_7.25_Undersampling,L2,Dropout-not_dynamic-embeddings_pretrained_.ipynb*
+* Pre-trained embeddings from Word2Vec loaded in, these embeddings replace uttered words and then are fed into the LSTM layer
+
+*3. RNN_PredictingPHQsymptoms_7.28_LIWC-Regression_denselayer.ipynb*
+* Embeddings learned along the way to replaced uttered words with embeddings and then feed these into LSTM layer
+* Predicts depression from utterances using a concatenation of: the utternace where words are learned as embeddings, and linguistic features of the utterances (derived from LIWC, ahead of time)
+
+Notes: 
+* Using Python 2 with Tensorflow
+* Code may contain errors, this repo is intended more to keep models and code for future use rather than present polished code. 
+
