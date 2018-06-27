@@ -2,9 +2,9 @@
 Use LSTM in tensorflow to predict outcomes from text data
 
 
-**The goal** of these models was to use an LSTM network (long short term memory network, an artificial netural network architecture) predict depression labels (based on the PHQ-8) from transcribed verbal data from an interivews with around 700 participants. Interviews were intended to simulate a structured psychiatric interview. 
+**The goal** of these models was to train an LSTM network (long short term memory network, an artificial netural network architecture) predict depression labels (based on the PHQ-8) from transcribed verbal data. Data comes from from interivews with around 700 participants; these interviews were intended to simulate a structured psychiatric interview. 
 
-Prediction options include: depression level (continuous, low/med/high, or binary), level for each depression symptom based on PHQ-8 (low/med/high, or binary). You may need to change the cost function in the code depending on the outcome chosen. Depression data is often unbalanced (more lower levels of depression), so options in code for 1) undersampling the majority class (lower levels of depression) and 2) cost-senstive learning. For regularization, there are various options for drop out and L1/L2 regaularization. 
+Prediction options include: depression level (continuous, low/med/high, or binary), level for each of 8 possible depression symptoms based on PHQ-8 (low/med/high, or binary). You may need to change the cost function in the code depending on the outcome chosen. Depression data is often unbalanced (more lower levels of depression), so options in code for 1) undersampling the majority class (lower levels of depression) and 2) cost-senstive learning. For regularization, there are various options for dropout and L1/L2 regaularization. 
 
 **Three variants of the model include in this repo:**
 
@@ -20,7 +20,7 @@ Prediction options include: depression level (continuous, low/med/high, or binar
 * Predicts depression from utterances using a concatenation of: the utternace where words are learned as embeddings, and linguistic features of the utterances (derived from LIWC, ahead of time)
 
 **Notes:** 
-* This repository is intended to keep (unpolished) examples building an LSTM in Tensorflow to predict outcomes from text data, rather than present any polished code or application
+* This repository is intended to keep (unpolished) examples for building an LSTM in Tensorflow to predict outcomes from text data, rather than present any polished code or application
 * Written in Python 2 with Tensorflow
 
 
